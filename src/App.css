@@ -66,7 +66,7 @@
   height: 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #C04D57;
-  margin: 20px 0;
+  margin: 15px 0;
   opacity: 0.8; }
 
 .branding__text__newsletter__title {
@@ -155,7 +155,8 @@
 .layout-wrapper {
   display: flex;
   padding: 380px 50px 10px 50px;
-  justify-content: center; }
+  justify-content: center;
+  flex-wrap: wrap; }
 
 .layout-wrapper.with-selected-episode {
   padding-bottom: 120px; }
@@ -224,30 +225,53 @@ iframe {
   position: fixed;
   bottom: 0; }
 
-@media screen and (max-width: 640px) {
+footer {
+  flex: 1 0 100%;
+  text-align: center;
+  color: #ccc; }
+
+footer p {
+  font-size: 0.7rem; }
+
+@media screen and (max-width: 680px) {
   .app-wrapper {
     font-size: 13px; }
   .header {
     padding: 10px;
-    height: 60px; }
+    height: 100px; }
   .navigation a {
     width: 20px;
     height: 20px; }
   .navigation a.twitter {
     height: 16px; }
-  .branding__logo {
-    width: 35px;
-    height: 35px;
+  .branding__hero {
+    width: 75px;
+    height: 75px;
     margin-right: 5px; }
   .branding__text__title {
-    font-size: 18px; }
+    font-size: 18px;
+    line-height: 18px; }
   .branding__text__subtitle {
     font-size: 12px;
     line-height: 12px;
     font-weight: 300; }
+  .branding__text__description {
+    display: none; }
+  .branding__text__separator {
+    display: none; }
+  .branding__text__newsletter__text, .branding__text__newsletter__title {
+    display: none; }
+  .branding__text form {
+    margin-top: 10px; }
+  .branding__text form input[type='email'] {
+    padding: 3px;
+    font-size: 0.8rem; }
+  .branding__text form input[type='submit'] {
+    padding: 3px;
+    font-size: 0.8rem; }
   .layout-wrapper {
     flex-direction: column;
-    padding: 80px 10px 120px 10px; }
+    padding: 110px 10px 20px 10px; }
   .content {
     max-width: 100%;
     margin-bottom: 10px; }
@@ -264,11 +288,3 @@ iframe {
     flex: 1;
     padding-left: 0;
     border-left: 0; } }
-
-@media screen and (max-width: 320px) {
-  .branding__logo {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px; }
-  .branding__text__title {
-    font-size: 14px; } }

@@ -73,10 +73,10 @@ class App extends Component {
             <hgroup className="branding__text">
               <h1 className="branding__text__title">FLAGS AND HIGH FIVES</h1>
               <h2 className="branding__text__subtitle">A podcast retrospective</h2>
-              <p>Friends and former podcasters extraordinaire, Arvin and Ben, look back on their success, shortcomings, and the ultimate downfall of their hit 2007 video game podcast. </p>
+              <p className="branding__text__description">Friends and former podcasters extraordinaire, Arvin and Ben, look back on their success, shortcomings, and the ultimate downfall of their hit 2007 video game podcast. </p>
               <hr className="branding__text__separator" />
               <h3 className="branding__text__newsletter__title">Subscribe</h3>
-              <p className="branding__text__newsletter_text">
+              <p className="branding__text__newsletter__text">
                 Get notified of the latest episodes and news. We promise not to spam you.
               </p>
               <form
@@ -151,6 +151,9 @@ class App extends Component {
 
            </section>
          </aside>
+         <footer>
+           <p>&copy; 2017 Arvin & Ben</p>
+         </footer>
         </div>
         <div className="selected-episode">
           {selectedEpisode}

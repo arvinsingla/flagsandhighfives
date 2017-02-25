@@ -92,7 +92,7 @@ $font-oswald: 'Oswald', sans-serif;
       height: 0;
       border-top: 1px solid $color-grey-light;
       border-bottom: 1px solid $color-primary-darker;
-      margin: 20px 0;
+      margin: 15px 0;
       opacity: 0.8;
     }
 
@@ -211,6 +211,7 @@ $font-oswald: 'Oswald', sans-serif;
   display: flex;
   padding: 380px 50px 10px 50px;
   justify-content: center;
+  flex-wrap: wrap;
 
   &.with-selected-episode {
     padding-bottom: 120px;
@@ -300,8 +301,17 @@ iframe {
   bottom: 0;
 }
 
+footer {
+  flex: 1 0 100%;
+  text-align: center;
+  color: $color-grey-dark;
+  p {
+    font-size: 0.7rem;
+  }
+}
 
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 680px) {
 
   .app-wrapper {
     font-size: 13px;
@@ -309,7 +319,7 @@ iframe {
 
   .header {
     padding: 10px;
-    height: 60px;
+    height: 100px;
   }
 
   .navigation {
@@ -325,9 +335,9 @@ iframe {
 
   .branding {
 
-    &__logo {
-      width: 35px;
-      height: 35px;
+    &__hero {
+      width: 75px;
+      height: 75px;
       margin-right: 5px;
     }
 
@@ -335,6 +345,7 @@ iframe {
 
       &__title {
         font-size: 18px;
+        line-height: 18px;
       }
 
       &__subtitle {
@@ -342,12 +353,41 @@ iframe {
         line-height: 12px;
         font-weight: 300;
       }
+
+      &__description {
+        display: none;
+      }
+
+      &__separator {
+        display: none;
+      }
+
+      &__newsletter {
+
+        &__text,
+        &__title {
+          display: none;
+        }
+      }
+
+      form {
+        margin-top: 10px;
+        input[type='email'] {
+           padding: 3px;
+           font-size: 0.8rem;
+        }
+
+        input[type='submit'] {
+          padding: 3px;
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 
   .layout-wrapper {
     flex-direction: column;
-    padding: 80px 10px 120px 10px;
+    padding: 110px 10px 20px 10px;
   }
 
   .content {
@@ -380,23 +420,5 @@ iframe {
     flex: 1;
     padding-left: 0;
     border-left: 0;
-  }
-}
-
-@media screen and (max-width: 320px) {
-
-  .branding {
-
-    &__logo {
-      width: 30px;
-      height: 30px;
-      margin-right: 5px;
-    }
-
-    &__text {
-      &__title {
-        font-size: 14px;
-      }
-    }
   }
 }
