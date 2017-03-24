@@ -4,7 +4,7 @@ import arvin from './arvin.jpg';
 import ben from './ben.jpg';
 import './App.css';
 
-const episodeURL = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.soundcloud.com%2Fusers%2Fsoundcloud%3Ausers%3A290085134%2Fsounds.rss&api_key=0tjef0mdha7ryfkqk9hoovmgwz7oweknjaoksobz';
+const soundcloudApi = 'http://api.soundcloud.com/tracks?client_id=lXuRTH6OJk7SmQZtb2MDGbGSMOkKxWPF&user_id=290085134&limit=100';
 
 class App extends Component {
 
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   setSelectedEpisode = (episode, autoplay = false) => {
-    let id  = episode.guid.match(/\/.*$/)[0].substring(1);
+    let id  = episode.id;
     this.setState({
       selectedEpisode: {
         id,
@@ -34,13 +34,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(episodeURL, {
+    fetch(soundcloudApi, {
       method: 'GET'
     }).then((response) => {
       return response.json();
     }).then((json) => {
       console.log(json);
-      let episodes = json.items || [];
+      let episodes = json || [];
       if (!episodes.length) {
         return;
       }
@@ -59,10 +59,15 @@ class App extends Component {
     let selectedEpisodeSrc = '';
     let validEmail = this.isValidEmail();
     let layoutWrapperClass = this.state.selectedEpisode.id ? 'layout-wrapper with-selected-episode' : 'layout-wrapper';
+    let noEpisodes = '';
 
     if (this.state.selectedEpisode.id) {
       let selectedEpisodeSrc = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${this.state.selectedEpisode.id}&amp;color=f3616e&amp;auto_play=${this.state.selectedEpisode.autoplay}&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false`
       selectedEpisode = <iframe className="soundcloud-player" width="100%" height="110" scrolling="no" frameBorder="no" src={selectedEpisodeSrc}></iframe>
+    }
+
+    if (this.state.episodes.length === 0) {
+      noEpisodes = <div className="no-episodes">No episodes could be found</div>
     }
 
     return (
@@ -117,18 +122,19 @@ class App extends Component {
           <section className="content">
             {this.state.episodes.map((episode) => {
               return (
-                <article className="content__item" key={episode.guid}>
+                <article className="content__item" key={episode.id}>
                   <header className="content__item__header">
                     <button className="content__item__header__play" onClick={() => this.setSelectedEpisode(episode, true)}>Play</button>
                     <div className="content__item__header__text">
                       <h3 className="content__item__header__text__title">{episode.title}</h3>
-                      <time className="content__item__header__text__date">Published: {episode.pubDate}</time>
+                      <time className="content__item__header__text__date">Published: {episode.created_at}</time>
                     </div>
                   </header>
                   <section className="content__item__description">{episode.description}</section>
                 </article>
               )
             })}
+            {noEpisodes}
           </section>
           <aside className="sidebar">
             <section className="social">
