@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import hero from './fahf_website_hero.png';
-import arvin from './arvin.jpg';
-import ben from './ben.jpg';
+import itunes from './itunes-badge.png';
+import googleplay from './google-badge.png';
 import './App.css';
 
 const soundcloudApi = 'http://api.soundcloud.com/tracks?client_id=lXuRTH6OJk7SmQZtb2MDGbGSMOkKxWPF&user_id=290085134&limit=100';
@@ -62,7 +62,7 @@ class App extends Component {
     let noEpisodes = '';
 
     if (this.state.selectedEpisode.id) {
-      let selectedEpisodeSrc = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${this.state.selectedEpisode.id}&amp;color=f3616e&amp;auto_play=${this.state.selectedEpisode.autoplay}&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false`
+      selectedEpisodeSrc = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${this.state.selectedEpisode.id}&amp;color=f3616e&amp;auto_play=${this.state.selectedEpisode.autoplay}&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false`
       selectedEpisode = <iframe className="soundcloud-player" width="100%" height="110" scrolling="no" frameBorder="no" src={selectedEpisodeSrc}></iframe>
     }
 
@@ -144,17 +144,19 @@ class App extends Component {
                 <li><a href="https://www.facebook.com/FAHFpodcast/" target="_BLANK" className="facebook" alt="facebook" title="facebook">Facebook</a></li>
               </ul>
             </section>
-            <section className="hosts">
-              <h3 className="hosts_title">Hosts</h3>
-              <section className="arvin">
-                <img src={arvin} alt="Arvin" />
-                <div className="description"><strong>Arvin</strong> is a software engineer, father, tinkerer and overall geeky guy. When he has time he writes <a href="https://medium.com/@arvinsingla" target="_BLANK">medium posts</a> about technology</div>
-              </section>
-              <section className="ben">
-                <img src={ben} alt="Ben" />
-                <div className="description"><strong>Ben</strong> tells stories. He's a writer and publisher with <a href="https://adventureworldspress.com/" target="_BLANK">Adventure Worlds Press</a>. His first books is out now. You can buy it and read more from him <a href="http://www.benvandongen.com" target="_BLANK">on his website</a>.</div>
-              </section>
-
+            <section className="services">
+              <ul>
+                <li>
+                  <a href="https://itunes.apple.com/ca/podcast/flags-and-high-fives-a-podcast-retrospective/id1218051476" target="_BLANK" title="iTunes" alt="iTunes" className='itunes'>
+                    <img src={itunes} alt="Subscribe on iTunes" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Iaeedrwhbsquvbpo3adkxm6mpay?t%3DFlags_and_High_Fives:_A_podcast_retrospective%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16" target="_BLANK" title="iTunes" alt="iTunes" className='itunes'>
+                    <img src={googleplay} alt="Subscribe on Google Play Music" />
+                  </a>
+                </li>
+              </ul>
            </section>
          </aside>
          <footer>
