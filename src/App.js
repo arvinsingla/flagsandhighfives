@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import hero from './fahf_website_hero.png';
 import itunes from './itunes-badge.png';
 import googleplay from './google-badge.png';
+import rss from './rss-badge.png';
 import './App.css';
 
 const soundcloudApi = 'http://api.soundcloud.com/tracks?client_id=lXuRTH6OJk7SmQZtb2MDGbGSMOkKxWPF&user_id=290085134&limit=100';
@@ -154,6 +155,11 @@ class App extends Component {
                 <li>
                   <a href="https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Iaeedrwhbsquvbpo3adkxm6mpay?t%3DFlags_and_High_Fives:_A_podcast_retrospective%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16" target="_BLANK" title="iTunes" alt="iTunes" className='itunes'>
                     <img src={googleplay} alt="Subscribe on Google Play Music" />
+                  </a>
+                </li>
+                <li>
+                  <a href="http://feeds.soundcloud.com/users/soundcloud:users:290085134/sounds.rss" target="_BLANK" title="RSS" alt="RSS" className='rss'>
+                    <img src={rss} alt="Subscribe via RSS" />
                   </a>
                 </li>
               </ul>
