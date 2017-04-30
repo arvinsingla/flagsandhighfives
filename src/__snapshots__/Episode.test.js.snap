@@ -1,0 +1,29 @@
+exports[`test renders correctly 1`] = `
+<article
+  className="content__item">
+  <header
+    className="content__item__header">
+    <button
+      className="content__item__header__play"
+      onClick={[Function]}>
+      Play
+    </button>
+    <div
+      className="content__item__header__text">
+      <h3
+        className="content__item__header__text__title">
+        Hello World
+      </h3>
+      <time
+        className="content__item__header__text__date">
+        Published: 
+        06-06-1981
+      </time>
+    </div>
+  </header>
+  <section
+    className="content__item__description">
+    I am a very model of a modern major general
+  </section>
+</article>
+`;

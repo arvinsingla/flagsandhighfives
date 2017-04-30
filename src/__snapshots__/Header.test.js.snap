@@ -1,0 +1,75 @@
+exports[`test renders correctly 1`] = `
+<header
+  className="header">
+  <div
+    className="branding">
+    <img
+      alt="Flags and High Fives logo"
+      className="branding__hero"
+      src="fahf_website_hero.png" />
+    <hgroup
+      className="branding__text">
+      <h1
+        className="branding__text__title">
+        FLAGS AND HIGH FIVES
+      </h1>
+      <h2
+        className="branding__text__subtitle">
+        A podcast retrospective
+      </h2>
+      <p
+        className="branding__text__description">
+        Friends and former podcasters extraordinaire, Arvin and Ben, look back on their success, shortcomings, and the ultimate downfall of their hit 2007 video game podcast. 
+      </p>
+      <hr
+        className="branding__text__separator" />
+      <h3
+        className="branding__text__newsletter__title">
+        Subscribe
+      </h3>
+      <p
+        className="branding__text__newsletter__text">
+        Get notified of the latest episodes and news. We promise not to spam you.
+      </p>
+      <form
+        action="http://arvinsingla.us1.list-manage.com/subscribe/post?u=b89ca2fcacbd5d9a28518d5cd&id=5443a024ee"
+        className="branding__text__newsletter__form"
+        id="mc-embedded-subscribe-form"
+        method="post"
+        name="mc-embedded-subscribe-form"
+        noValidate={true}
+        target="_blank">
+        <input
+          className="required email"
+          id="mce-EMAIL"
+          name="EMAIL"
+          onChange={[Function]}
+          placeholder="Email address"
+          type="email"
+          value="" />
+        <div
+          aria-hidden="true"
+          style={
+            Object {
+              "left": "-5000px",
+              "position": "absolute",
+            }
+          }>
+          <input
+            name="b_b89ca2fcacbd5d9a28518d5cd_5443a024ee"
+            tabIndex="-1"
+            type="text"
+            value="" />
+        </div>
+        <input
+          className="button"
+          disabled={true}
+          id="mc-embedded-subscribe"
+          name="subscribe"
+          type="submit"
+          value="Subscribe" />
+      </form>
+    </hgroup>
+  </div>
+</header>
+`;
