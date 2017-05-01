@@ -63,7 +63,6 @@ class App extends Component {
     return (
       <div className="app-wrapper">
         <Header />
-
         <div className={layoutWrapperClass}>
           <section className="content">
             {this.state.episodes.map((episode) => {
